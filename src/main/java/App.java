@@ -1,9 +1,9 @@
 import java.util.Map;
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
-import static org.fluentlenium.core.filter.FilterConstructor.*;
+
 import java.util.HashMap;
 
 public class App {
@@ -18,10 +18,10 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-post("/tasks", (request, response) -> {
+post("/Tasks", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
-      ArrayList<Task> tasks = request.session().attribute("Tasks");
+      ArrayList<Task> tasks = request.session().attribute("tasks");
 
       if (tasks == null) {
         tasks = new ArrayList<Task>();

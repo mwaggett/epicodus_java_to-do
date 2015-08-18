@@ -1,5 +1,3 @@
-import static org.fluentlenium.core.filter.FilterConstructor.*;
-
 public class Task {
   private String mDescription;
 
