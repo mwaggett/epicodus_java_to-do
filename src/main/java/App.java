@@ -55,5 +55,19 @@ post("/Tasks", (request, response) -> {
        model.put("template", "templates/completed.vtl");
        return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
+
+      post("/find", (request, response) -> {
+        HashMap<String, Object> model = new HashMap<String, Object>();
+
+        ArrayList<Task> tasks = request.session().attribute("tasks");
+
+        Integer findId = Integer.parseInt(request.queryParams("findTask"));
+
+        Task foundTask = Task.find(findId);
+        model.put("foundTask", foundTask);
+
+        model.put("template", "templates/find.vtl");
+        return new ModelAndView(model, layout);
+       }, new VelocityTemplateEngine());
   }
 }

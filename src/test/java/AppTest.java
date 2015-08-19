@@ -29,7 +29,7 @@ public class AppTest extends FluentTest {
   public void taskIsCreatedTest() {
     goTo("http://localhost:4567/");
     fill("#description").with("Mow the lawn");
-    submit(".btn");
+    submit("#add");
     assertThat(pageSource()).contains("Your task has been saved.");
   }
 
@@ -37,7 +37,7 @@ public class AppTest extends FluentTest {
   public void taskIsDisplayedTest() {
     goTo("http://localhost:4567/");
     fill("#description").with("Mow the lawn");
-    submit(".btn");
+    submit("#add");
     click("a", withText("Go Back"));
     assertThat(pageSource()).contains("Mow the lawn");
 	}

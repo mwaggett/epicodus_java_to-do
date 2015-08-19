@@ -9,7 +9,7 @@
   <button type="submit" id="add" class="btn btn-default">Add task</button>
 </form>
 
-<ul>
+<ol>
 #foreach ($task in $tasks)
   <li>$task.getDescription()
   <form action="/completed" method="post">
@@ -17,4 +17,11 @@
   <button type="submit" id="done-$task" class="btn btn-default">Done!</button>
   </form></li>
 #end
-</ul>
+</ol>
+
+<form action="/find" method="post">
+  <label for="findTask">Find task by ID #:</label>
+  <input id="findTask" name="findTask" type="text">
+
+  <button type="submit" id="findTaskButton" class="btn btn-default">Find task</button>
+</form>
