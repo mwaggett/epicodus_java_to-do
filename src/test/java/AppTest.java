@@ -1,4 +1,4 @@
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -46,10 +46,10 @@ public class AppTest extends FluentTest {
   public void multipleTasksAreDisplayedTest() {
     goTo("http://localhost:4567/");
     fill("#description").with("Mow the lawn");
-    submit(".btn");
+    submit("#add");
     click("a", withText("Go Back"));
     fill("#description").with("Buy groceries");
-    submit(".btn");
+    submit("#add");
     click("a", withText("Go Back"));
     assertThat(pageSource()).contains("Mow the lawn");
     assertThat(pageSource()).contains("Buy groceries");

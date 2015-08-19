@@ -6,11 +6,15 @@
   <label for="description">Task Description</label>
   <input id="description" name="description" type="text">
 
-  <button type="submit" class="btn btn-default">Add task</button>
+  <button type="submit" id="add" class="btn btn-default">Add task</button>
 </form>
 
 <ul>
 #foreach ($task in $tasks)
-  <li>$task.getDescription()</li>
+  <li>$task.getDescription()
+  <form action="/completed" method="post">
+  <input type="hidden" name="taskComplete-$task" value="true">
+  <button type="submit" id="done-$task" class="btn btn-default">Done!</button>
+  </form></li>
 #end
 </ul>
