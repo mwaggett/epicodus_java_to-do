@@ -1,27 +1,4 @@
-<h1>Task list!</h1>
+<h1>Todo list!</h1>
 
-<p>Add a new Task:</p>
-
-<form action="/Tasks" method="post">
-  <label for="description">Task Description</label>
-  <input id="description" name="description" type="text">
-
-  <button type="submit" id="add" class="btn btn-default">Add task</button>
-</form>
-
-<ol>
-#foreach ($task in $tasks)
-  <li>$task.getDescription()
-  <form action="/completed" method="post">
-  <input type="hidden" name="taskComplete-$task" value="true">
-  <button type="submit" id="done-$task" class="btn btn-default">Done!</button>
-  </form></li>
-#end
-</ol>
-
-<form action="/find" method="post">
-  <label for="findTask">Find task by ID #:</label>
-  <input id="findTask" name="findTask" type="text">
-
-  <button type="submit" id="findTaskButton" class="btn btn-default">Find task</button>
-</form>
+<a href="/categories">View Category List</a>
+<a href="/categories/new">Add a New Category</a>
