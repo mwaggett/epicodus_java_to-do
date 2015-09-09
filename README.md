@@ -1,4 +1,4 @@
-# Application Name
+# To-Do List (no database)
 
 ##### _To-Do List for Epicodus, 20 August 2015_
 
